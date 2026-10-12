@@ -1,0 +1,59 @@
+﻿@model List<Practical6.Models.Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Product Catalog</title>
+</head>
+
+<body>
+
+    <h1>Product Catalog</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Product Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th>Product Category</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+
+                <td>
+                    <img src="@p.ImgURL"
+                         width="200"
+                         alt="@p.Name" />
+                </td>
+
+                <td>@p.Name</td>
+
+                <td>@p.Description</td>
+
+                <td>@p.Price</td>
+
+                <td>@p.Category</td>
+
+                <td>
+                    @Html.ActionLink(
+                        "View Details",
+                        "Details",
+                        "Product",
+                        new { id = p.Id },
+                        null
+                    )
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</body>
+</html>

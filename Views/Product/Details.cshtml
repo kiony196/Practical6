@@ -1,0 +1,62 @@
+﻿@model Practical6.Models.Product
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Product Details</title>
+</head>
+
+<body>
+
+    <h1>Product Details</h1>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <td><b>Product Id</b></td>
+            <td>@Model.Id</td>
+        </tr>
+
+        <tr>
+            <td><b>Product Name</b></td>
+            <td>@Model.Name</td>
+        </tr>
+
+        <tr>
+            <td><b>Product Description</b></td>
+            <td>@Model.Description</td>
+        </tr>
+
+        <tr>
+            <td><b>Product Price</b></td>
+            <td>@Model.Price</td>
+        </tr>
+
+        <tr>
+            <td><b>Product Category</b></td>
+            <td>@Model.Category</td>
+        </tr>
+
+        <tr>
+            <td><b>Product Image</b></td>
+
+            <td>
+                <img src="@Model.ImgURL"
+                     width="200"
+                     alt="@Model.Name" />
+            </td>
+        </tr>
+
+    </table>
+
+    <br />
+
+    @Html.ActionLink(
+        "Back to Product List",
+        "Index",
+        "Product"
+    )
+
+</body>
+</html>
